@@ -9,10 +9,11 @@ import io.github.phantamanta44.shlgl.graphics.texture.TextureManager;
 public class Main implements IListener<RenderEvent> {
 
     private static final RenderHandler renderer = new RenderHandler();
-    private static final TextureInfo tex = TextureManager.getTextureInfo("hello.png");
+    private static TextureInfo tex;
 
     public static void main(String[] args) {
         SHLGL.init(1280, 960, "Hello, world!");
+        tex = TextureManager.getTextureInfo("hello.png");
         SHLGL.getInstance().setResolution(1280, 960);
         SHLGL.getInstance().getEventBus().on(RenderEvent.class, renderer);
         SHLGL.getInstance().getGameWindow().setVisible(true);

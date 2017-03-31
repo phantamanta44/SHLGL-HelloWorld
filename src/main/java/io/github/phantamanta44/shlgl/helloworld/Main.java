@@ -3,6 +3,7 @@ package io.github.phantamanta44.shlgl.helloworld;
 import io.github.phantamanta44.shlgl.SHLGL;
 import io.github.phantamanta44.shlgl.engine.event.IListener;
 import io.github.phantamanta44.shlgl.engine.event.impl.RenderEvent;
+import io.github.phantamanta44.shlgl.graphics.render.RenderBuffer;
 import io.github.phantamanta44.shlgl.graphics.texture.TextureInfo;
 import io.github.phantamanta44.shlgl.graphics.texture.TextureManager;
 
@@ -22,8 +23,10 @@ public class Main implements IListener<RenderEvent> {
 
     @Override
     public void onEvent(RenderEvent event) {
-        TextureManager.bind(tex);
-        event.getBuffer().drawRect(0, 0, 800, 450);
+        RenderBuffer buf = event.getBuffer();
+        buf.bind(tex);
+        buf.colour4F(1F, 1F, 1F, 1F);
+        buf.drawRect(0, 0, 800, 450);
     }
 
 }

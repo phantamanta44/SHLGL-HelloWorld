@@ -42,7 +42,8 @@ public class Main {
             buf.colour4F(1F, 1F, 0F, 1F);
             buf.drawRect(0, -960, 1280, 960);
         });
-                SHLGL.getInstance().getGameWindow().setVisible(true);
+        
+        SHLGL.getInstance().getGameWindow().setVisible(true);
         SHLGL.getInstance().runMainLoop(20);
     }
 

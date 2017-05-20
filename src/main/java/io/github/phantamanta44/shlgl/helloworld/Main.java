@@ -29,7 +29,15 @@ public class Main implements IListener<RenderEvent> {
         RenderBuffer buf = event.getBuffer();
         buf.bind(tex);
         buf.colour4F(1F, 1F, 1F, 1F);
-        buf.drawRect(0, 0, 800, 450);
+        buf.drawRect(0, 0, 1280, 960);
+        buf.colour4F(1F, 0F, 0F, 1F);
+        buf.drawRect(1280, 0, 1280, 960);
+        buf.colour4F(0F, 1F, 0F, 1F);
+        buf.drawRect(0, 960, 1280, 960);
+        buf.colour4F(0F, 0F, 1F, 1F);
+        buf.drawRect(-1280, 0, 1280, 960);
+        buf.colour4F(1F, 1F, 0F, 1F);
+        buf.drawRect(0, -960, 1280, 960);
     }
 
 }
